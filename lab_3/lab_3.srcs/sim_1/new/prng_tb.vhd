@@ -54,10 +54,10 @@ architecture Behavioral of prng_tb is
 begin
 
 prng0: prng
-generic map(init_seed0 => "0101110110010101",
-            init_seed1 => "0101110110010101",
-            init_seed2 => "0101110110010101",
-            init_seed3 => "0101110110010101")
+generic map(init_seed0 => "0100110011100011",
+            init_seed1 => "1101010101010101",
+            init_seed2 => "1010001100010101",
+            init_seed3 => "1010101010101010")
 port map( clk => clk, rnd => rnd );
 
 clk <= not clk after PERIOD / 2;

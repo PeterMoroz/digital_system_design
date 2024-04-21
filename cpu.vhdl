@@ -32,6 +32,10 @@ architecture fsm of cpu is
   constant JMP : std_logic_vector( 3 downto 0) := "0101";
 
   constant one : std_logic_vector( 7 downto 0) := "00000001";
+  
+  --   FSM states
+  type state_t is ( load_opcode, LDA_1); -- List of states in the CPU FSM
+  
 
   -- Signals used for debugging
   signal state_watch : state_t;
@@ -40,9 +44,6 @@ architecture fsm of cpu is
   signal accu    : std_logic_vector( 7 downto 0) := "00000000" ; -- Accumulator
   signal op_code : std_logic_vector( 3 downto 0) := "0000" ;     -- Current op-code
   signal pc      : std_logic_vector( 7 downto 0) := "00000000" ; -- Program counter
-
-    --   FSM states
-  type state_t is ( load_opcode, LDA_1); -- List of states in the CPU FSM
 
 begin  --  fsm 
 
